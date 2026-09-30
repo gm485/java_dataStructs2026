@@ -1,6 +1,6 @@
 # java_dataStructs2026
 
-# --ADT List implementation[`/Lab1`](./Lab1)
+# --ADT List implementation[`/Lab1`](Labs)
 # --REF Based List Singly Linked List[`/Lab2`](./Lab2)
 
 

@@ -1,3 +1,5 @@
+package lab1;
+
 public class TestListArrayBased {
     public static void main(String[] args) {
         System.out.println("--TEST CLASS");

@@ -1,3 +1,5 @@
+package lab2;
+
 public class Node
 {
   private Object item;
@@ -34,5 +36,5 @@ public class Node
   {
     return next;
   } // end getNext
-} // end class Node
+} // end class lab2.Node
 

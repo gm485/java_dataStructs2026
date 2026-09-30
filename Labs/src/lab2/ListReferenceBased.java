@@ -1,6 +1,9 @@
-// ****************************************************
+package lab2;// ****************************************************
 // Reference-based implementation of ADT list.
 // ****************************************************
+import lab1.ListInterface;
+
+import lab1.ListIndexOutOfBoundsException;
 
 public class ListReferenceBased implements ListInterface
 {
@@ -121,4 +124,4 @@ public class ListReferenceBased implements ListInterface
   } // end removeAll
 
 
-} // end ListReferenceBased
+} // end lab2.ListReferenceBased

@@ -1,3 +1,5 @@
+package lab1;
+
 // ********************************************************
 // Array-based implementation of the ADT list.
 // *********************************************************
@@ -36,7 +38,7 @@ public class ListArrayBased implements ListInterface
   {
     if (numItems > MAX_LIST)
     {
-      throw new ListException("ListException on add");
+      throw new ListException("lab1.lab2.ListException on add");
     }  // end if
     if (index >= 1 && index <= numItems+1)
     {
@@ -54,7 +56,7 @@ public class ListArrayBased implements ListInterface
     else
     {  // index out of range
       throw new ListIndexOutOfBoundsException(
-       "ListIndexOutOfBoundsException on add");
+       "lab1.lab2.ListIndexOutOfBoundsException on add");
     }  // end if
   } //end add
 
@@ -68,7 +70,7 @@ public class ListArrayBased implements ListInterface
     else
     {  // index out of range
       throw new ListIndexOutOfBoundsException(
-        "ListIndexOutOfBoundsException on get");
+        "lab1.lab2.ListIndexOutOfBoundsException on get");
     }  // end if
   } // end get
 
@@ -88,7 +90,7 @@ public class ListArrayBased implements ListInterface
     else
     {  // index out of range
         throw new ListIndexOutOfBoundsException(
-        "ListIndexOutOfBoundsException on remove");
+        "lab1.lab2.ListIndexOutOfBoundsException on remove");
     }  // end if
   } //end remove
 
@@ -96,4 +98,4 @@ public class ListArrayBased implements ListInterface
   {
     return position - 1;
   }  // end translate
-}  // end ListArrayBased
+}  // end lab1.ListArrayBased
