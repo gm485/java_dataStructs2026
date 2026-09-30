@@ -1,6 +1,8 @@
 // ********************************************************
 // Interface ListInterface for the ADT list.
 // *********************************************************
+
+
 public interface ListInterface {
   public boolean isEmpty();
   public int size();
