@@ -136,4 +136,22 @@ public class ListReferenceBased implements ListInterface
      }
      System.out.print(" <- TAIL\n");
   }
+
+  //list longest
+  public String listLongest(){
+    if (head == null) {
+      System.out.println("List is empty cannot find largest");
+    }
+    Node curr = head;
+    String longest = null;
+
+    while (curr!=null) {
+      String currentStr = (String) curr.getItem();
+      if (currentStr.length() > longest.length()) {
+        longest = currentStr;
+      }
+      curr = curr.getNext();
+    }
+    return longest;
+  }
 } // end lab2.ListReferenceBased
