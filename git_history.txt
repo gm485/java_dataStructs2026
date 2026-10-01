@@ -1,0 +1,77 @@
+commit 7291b2e4ba46502ac4314214e0faf92d79133dd4
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Thu Oct 1 16:46:55 2026 +0100
+
+    listLongest method tested
+
+commit 893ff0c6ec3ab2d1343361b8a923458ca01c7985
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Thu Oct 1 16:38:43 2026 +0100
+
+    list longest method implemented untested
+
+commit 4d36e911af2348b8dfea5c85c35f12dbf804cca4
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Thu Oct 1 16:19:49 2026 +0100
+
+    displayList working and tested
+
+commit 1335a989c482174335e351eb857a9eae1bf998e7
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Thu Oct 1 16:03:16 2026 +0100
+
+    lab2 adt operations tested
+
+commit 23dc971e5bfccea324c9b10bf54aee13a0dd0539
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 18:12:50 2026 +0100
+
+    markdown files fixed
+
+commit f0428dd9763ebeca8a801c0ad9e9bb7aec4e3262
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 18:11:39 2026 +0100
+
+    markdown files
+
+commit ad0d8bf15c810ee1f8f2abf919cd216b8b4e761f
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 17:53:52 2026 +0100
+
+    testing markdown file
+
+commit 53c3882167758a5c969641de2b04d914a259b53a
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 17:50:38 2026 +0100
+
+    refactor of files with packages for reuse in lab1 and lab2 List ADT testing
+
+commit 46cb2c4fac91f36a7b00d5e977e1f8528d7ae41d
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 17:26:06 2026 +0100
+
+    lab2 source files
+
+commit 3ad665bcfbfc76fb62fbb5b53be9d99069a856a7
+Author: GaryM <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 16:24:00 2026 +0000
+
+    lab2 setup
+
+commit e141434f7314105245747ab196294b029485eb1a
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 16:55:32 2026 +0100
+
+    lab1 complete
+
+commit e27c447233f52ebdac5986cb8bacc0a380213d9f
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 16:11:04 2026 +0100
+
+    initial setup
+
+commit 2b88170549baf27a9f177aecebe5d1345a928f63
+Author: GaryM <b00156485@mytudublin.ie>
+Date:   Wed Sep 30 15:54:30 2026 +0100
+
+    Initial commit
