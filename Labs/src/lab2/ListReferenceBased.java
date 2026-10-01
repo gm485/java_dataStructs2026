@@ -123,5 +123,17 @@ public class ListReferenceBased implements ListInterface
     numItems = 0;
   } // end removeAll
 
+  public void displayList() {
+    if (head == null) {
+      System.out.println("List is empty cannot traverse");
+    }
+    Node curr = head;
 
+    System.out.print("HEAD -> ");
+    while ( curr!=null ) {
+      System.out.print(curr.getItem() + ", ");
+      curr = curr.getNext();
+     }
+     System.out.print(" <- TAIL\n");
+  }
 } // end lab2.ListReferenceBased

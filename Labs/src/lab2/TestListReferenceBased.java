@@ -25,6 +25,10 @@ public class TestListReferenceBased {
         refList.add(2, 3);
         refList.add(3, 4);
 
+        //display list method
+        System.out.println("--Test List Method: displayList() -- ");
+        refList.displayList();
+
         refList.removeAll();
         try {
             System.out.println("--Test List Method: removeAll() --" + refList.get(1));

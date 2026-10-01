@@ -98,4 +98,8 @@ public class ListArrayBased implements ListInterface
   {
     return position - 1;
   }  // end translate
+
+  public void displayList(){
+    return;
+  }
 }  // end lab1.ListArrayBased
