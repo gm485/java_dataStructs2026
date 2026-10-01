@@ -36,6 +36,22 @@ public class TestListReferenceBased {
             System.out.println("-- Test List Method: removeAll() -- Index out of bounds exception caught");
         }
 
+        //testing string length method
+        System.out.println("\n--Test List Method: listLongest() --\n");
+        refList.add(1, "a");
+        refList.add(2, "b");
+        refList.add(3, "c");
+        refList.add(4, "d");
+        refList.add(5, "ea");
+        refList.add(6, "eaa");
+        refList.add(7, "eeeaa");
+
+
+        System.out.println("--Test List Method: size() --" + refList.size());
+        refList.displayList();
+        System.out.println("Largest String: " + refList.listLongest());
+
+
 
 
     }

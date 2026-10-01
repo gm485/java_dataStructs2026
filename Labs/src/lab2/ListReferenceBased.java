@@ -143,7 +143,7 @@ public class ListReferenceBased implements ListInterface
       System.out.println("List is empty cannot find largest");
     }
     Node curr = head;
-    String longest = null;
+    String longest = "";
 
     while (curr!=null) {
       String currentStr = (String) curr.getItem();

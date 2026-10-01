@@ -102,4 +102,8 @@ public class ListArrayBased implements ListInterface
   public void displayList(){
     return;
   }
+  @Override
+  public String listLongest(){
+    return null;
+  }
 }  // end lab1.ListArrayBased
