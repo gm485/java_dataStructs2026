@@ -123,5 +123,35 @@ public class ListReferenceBased implements ListInterface
     numItems = 0;
   } // end removeAll
 
+  public void displayList() {
+    if (head == null) {
+      System.out.println("List is empty cannot traverse");
+    }
+    Node curr = head;
 
+    System.out.print("HEAD -> ");
+    while ( curr!=null ) {
+      System.out.print(curr.getItem() + ", ");
+      curr = curr.getNext();
+     }
+     System.out.print(" <- TAIL\n");
+  }
+
+  //list longest
+  public String listLongest(){
+    if (head == null) {
+      System.out.println("List is empty cannot find largest");
+    }
+    Node curr = head;
+    String longest = "";
+
+    while (curr!=null) {
+      String currentStr = (String) curr.getItem();
+      if (currentStr.length() > longest.length()) {
+        longest = currentStr;
+      }
+      curr = curr.getNext();
+    }
+    return longest;
+  }
 } // end lab2.ListReferenceBased

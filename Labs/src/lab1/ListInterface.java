@@ -15,4 +15,6 @@ public interface ListInterface {
   public void remove(int index) 
                      throws ListIndexOutOfBoundsException;
   public void removeAll();
+  public void displayList();
+  public String listLongest();
 }  // end ListInterface
