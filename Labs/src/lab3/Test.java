@@ -12,12 +12,39 @@ public class Test {
         //display the stack
         stack.displayStack();
 
+        //test strings to test against
+        String test01 = "{a{b}c}";
+        System.out.println("is " + test01 + " balanced: " + isBalanced(test01));
 
 
     }
 
     //method to check for balanced braces, takes stack as input and checks against this.
-    public boolean isBalanced(StackReferenceBased stack) {
-     return false;
+    public static boolean isBalanced(String s) {
+        final String opening = "({["; //opening delimeters
+        final String closing = ")}]"; //closing delimeters
+        //stack
+        StackInterface stack = new StackReferenceBased();
+
+        //convert param to charArray,
+        //check to determine whether brackets match
+        //loop over each item, when you find opening bracket
+        //push to stack
+        for(char c: s.toCharArray()) {
+            if(opening.indexOf(c) != -1){
+                stack.push(c);
+            } else if (closing.indexOf(c) != -1){
+                //check if the stack is empty exit function returning false
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                //check left against right delimeter of opening
+                //closing pop does not match opening that has been added to the stack.
+                if (closing.indexOf(c) != opening.indexOf((Character)stack.pop())) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
     }
 }
