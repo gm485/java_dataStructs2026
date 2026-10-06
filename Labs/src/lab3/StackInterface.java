@@ -40,4 +40,10 @@ public interface StackInterface
   // Exception: Throws StackException if the stack is
   // empty.
 
+
+  /*
+    Display the stack vertically, checks for the stack empty and shows when empty.
+   */
+  public void displayStack();
+
 }  // end StackInterface
