@@ -74,6 +74,22 @@ public class Test {
                         System.out.println("Stack is empty. " + e.getMessage());
                     }
                     break;
+                case 4:
+                    //empty the stack
+                    //error stack already empty
+                    System.out.println("attempting to empty the stack");
+                    try{
+                        stack.popAll();
+
+                    }catch(StackException e) {
+                       System.out.println("stack is empty" + e.getMessage());
+                    }
+                    stack.displayStack();
+                    break;
+                case 5:
+                    System.out.println("enter a balanced string to check against brackets");
+                    //is the input a string
+
 
             }
         }
