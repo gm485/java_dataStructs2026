@@ -8,11 +8,6 @@ public class Test {
         StackInterface stack = new StackReferenceBased();
         //menu scanner
         Scanner sc = new Scanner(System.in);
-        //add 4 items to the stack
-        stack.push('a');
-        stack.push('b');
-        stack.push('c');
-        stack.push('d');
         //display the stack
         stack.displayStack();
 
@@ -43,7 +38,7 @@ public class Test {
             int userChoice = sc.nextInt();
 
             //switch case to handle user menu choices
-            switch (userChoice){
+            switch (userChoice) {
                 case 1:
                     //push a string to the stack
                     //take users input
@@ -51,7 +46,7 @@ public class Test {
                     String pushItem = sc.next();
                     stack.push(pushItem);
                     //update user on success or failure
-                    if(stack.peek() == pushItem){
+                    if (stack.peek() == pushItem) {
                         System.out.println(pushItem + " added to the stack.");
                     }
                     //display stack to the user
@@ -59,15 +54,32 @@ public class Test {
                     stack.displayStack();
                     break;
                 case 2:
+                    //pop item from the stack
+                    //error handling to check if the stack is empty
+                    System.out.println("attempting to pop from the stack");
+                    try {
+                        stack.pop();
+
+                    } catch (StackException e) {
+                        System.out.println("pop attempt failed.");
+                    }
+                    stack.displayStack();
+                    break;
+                case 3:
+                    //case 3 peek at the top of the stack
+                    System.out.println("Attempting to peek at the top of the stack");
+                    try{
+                        stack.peek();
+                    } catch(StackException e) {
+                        System.out.println("Stack is empty. " + e.getMessage());
+                    }
+                    break;
 
             }
-
-        } while(choice != -1);
-        //choice
-
-
-
-    }
+        }
+            while (choice != -1) ;
+            //choice
+        }
 
     //method to check for balanced braces, takes stack as input and checks against this.
     public static boolean isBalanced(String s) {
