@@ -1,20 +1,70 @@
 package lab3;
 
+import java.util.Scanner;
+
 public class Test {
     public static void main(String[] args) {
         //testing of the stack
         StackInterface stack = new StackReferenceBased();
+        //menu scanner
+        Scanner sc = new Scanner(System.in);
         //add 4 items to the stack
-        stack.push(4);
-        stack.push(5);
-        stack.push(6);
-        stack.push(7);
+        stack.push('a');
+        stack.push('b');
+        stack.push('c');
+        stack.push('d');
         //display the stack
         stack.displayStack();
 
         //test strings to test against
-        String test01 = "{a{b}c}";
+        String test01 = "{a{b}c}";//true
+        String test02 = "{a{bc}";//false
+        String test03 = "{ab}c}";//false
         System.out.println("is " + test01 + " balanced: " + isBalanced(test01));
+        System.out.println("is " + test02 + " balanced: " + isBalanced(test02));
+        System.out.println("is " + test03 + " balanced: " + isBalanced(test03));
+
+        //user menu
+        int choice = 0;
+
+
+        //user loop
+        //use cases:
+        //1: push string to stack.
+        //2: pop a string from stack, check if stack is empty.
+        //3: peek at the top of the stack, error handling.
+        //4: empty the stack, default stack is empty
+        //5: isBalanced string method check
+        //6: exit the program.
+        do {
+            System.out.println("enter your choice");
+            printMenu();
+            //users choice
+            int userChoice = sc.nextInt();
+
+            //switch case to handle user menu choices
+            switch (userChoice){
+                case 1:
+                    //push a string to the stack
+                    //take users input
+                    System.out.print("String to push to stack?");
+                    String pushItem = sc.next();
+                    stack.push(pushItem);
+                    //update user on success or failure
+                    if(stack.peek() == pushItem){
+                        System.out.println(pushItem + " added to the stack.");
+                    }
+                    //display stack to the user
+                    System.out.println("here is the new stack.");
+                    stack.displayStack();
+                    break;
+                case 2:
+
+            }
+
+        } while(choice != -1);
+        //choice
+
 
 
     }
@@ -32,7 +82,12 @@ public class Test {
         //push to stack
         for(char c: s.toCharArray()) {
             if(opening.indexOf(c) != -1){
-                stack.push(c);
+                try {
+                    //push operations can fail for implementation-dependent reasons
+                    stack.push(c);
+                }catch(StackException e){
+                    System.out.println("error pushing to stack, see error" + e.getMessage());
+                }
             } else if (closing.indexOf(c) != -1){
                 //check if the stack is empty exit function returning false
                 if (stack.isEmpty()) {
@@ -47,4 +102,17 @@ public class Test {
         }
         return stack.isEmpty();
     }
+
+    //method to print user choice menu
+    public static void printMenu() {
+        System.out.println("Welcome to STackTest! Please select a number from the list.");
+        System.out.println("1.\t Push a string on to the stack");
+        System.out.println("2.\t Pop a string from the stack.");
+        System.out.println("3.\t Peek at the top of the stack.");
+        System.out.println("4.\t Empty the stack.");
+        System.out.println("5.\t Check if a string has balanced brackets.");
+        System.out.println("6.\t Quit the program.");
+    }
+
+
 }
