@@ -11,16 +11,9 @@ public class Test {
         //display the stack
         stack.displayStack();
 
-        //test strings to test against
-        String test01 = "{a{b}c}";//true
-        String test02 = "{a{bc}";//false
-        String test03 = "{ab}c}";//false
-        System.out.println("is " + test01 + " balanced: " + isBalanced(test01));
-        System.out.println("is " + test02 + " balanced: " + isBalanced(test02));
-        System.out.println("is " + test03 + " balanced: " + isBalanced(test03));
 
         //user menu
-        int choice = 0;
+        int userChoice;
 
 
         //user loop
@@ -35,7 +28,7 @@ public class Test {
             System.out.println("enter your choice");
             printMenu();
             //users choice
-            int userChoice = sc.nextInt();
+            userChoice = sc.nextInt();
 
             //switch case to handle user menu choices
             switch (userChoice) {
@@ -68,9 +61,9 @@ public class Test {
                 case 3:
                     //case 3 peek at the top of the stack
                     System.out.println("Attempting to peek at the top of the stack");
-                    try{
+                    try {
                         stack.peek();
-                    } catch(StackException e) {
+                    } catch (StackException e) {
                         System.out.println("Stack is empty. " + e.getMessage());
                     }
                     break;
@@ -78,11 +71,11 @@ public class Test {
                     //empty the stack
                     //error stack already empty
                     System.out.println("attempting to empty the stack");
-                    try{
+                    try {
                         stack.popAll();
 
-                    }catch(StackException e) {
-                       System.out.println("stack is empty" + e.getMessage());
+                    } catch (StackException e) {
+                        System.out.println("stack is empty" + e.getMessage());
                     }
                     stack.displayStack();
                     break;
@@ -91,11 +84,18 @@ public class Test {
                     //is the input a string
 
 
+                case 6:
+                    System.out.println("attempting to close the program");
+                    System.exit(0);
+                default:
+                    System.out.println("invalid choice.");
+                    System.exit(1);
+
             }
         }
-            while (choice != -1) ;
-            //choice
-        }
+        while (true);
+    }
+
 
     //method to check for balanced braces, takes stack as input and checks against this.
     public static boolean isBalanced(String s) {

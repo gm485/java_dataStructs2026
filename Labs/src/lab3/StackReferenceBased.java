@@ -79,14 +79,13 @@ public class StackReferenceBased implements StackInterface
     if (curr == null) {
       System.out.println("the stack is empty");
     }
-    System.out.println("Top of the Stack");
+    System.out.println("Top of the Stack ");
     //print out the stack
     while(curr != null) {
       System.out.println(curr.getItem());
       curr = curr.getNext();
 
     }
-
   }
 
 }  // end StackReferenceBased
