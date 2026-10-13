@@ -77,7 +77,7 @@ public class TestPrintQueue {
                 case 3:
                     //Peek at the job at front of the queue
                     try {
-                        printQueue.peek();
+                        System.out.println(printQueue.peek());
                     } catch(QueueException e){
                         System.out.println("error peeking job " + e.getMessage());
                     }
@@ -92,7 +92,11 @@ public class TestPrintQueue {
                     break;
                 case 5:
                     //display all the jobs
-                    System.out.println("placeholder print option");
+                    try {
+                        printQueue.displayQueue();
+                    } catch(QueueException e){
+                        System.out.println("error displaying print jobs" + e.getMessage());
+                    }
                     break;
                 case 6:
                     //quit the program
