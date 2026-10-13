@@ -40,6 +40,37 @@ public class TestPrintQueue {
         do {
             choice = getMenuChoice(sc);
 
+            switch (choice) {
+                case 1:
+                    System.out.println("enter the name of the job you want to enqueue.");
+                    String jobName = sc.nextLine();
+                    System.out.println("enter number of pages");
+
+                    while(!sc.hasNextInt()){
+                        System.out.println("Please enter a valid page number");
+                        sc.next();
+                    }
+                    int pages = sc.nextInt();
+                    sc.nextLine();
+
+                    PrintJob newJob = new PrintJob();
+                    newJob.setDoc_name(jobName);
+                    newJob.setPages(pages);
+
+                    try{
+                        printQueue.enqueue(newJob);
+                        System.out.println(printQueue.peek() + "has been added to the queue.");
+
+                    } catch(QueueException e){
+                        System.out.println("error adding job" + e.getMessage());
+                    }
+
+                    break;
+
+
+
+            }
+
         } while (choice != 6);
         sc.close();
     }
