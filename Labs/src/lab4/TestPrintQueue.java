@@ -64,11 +64,40 @@ public class TestPrintQueue {
                     } catch(QueueException e){
                         System.out.println("error adding job" + e.getMessage());
                     }
-
                     break;
 
-
-
+                case 2:
+                    //dequeue from the front of the queue
+                    try{
+                        printQueue.dequeue();
+                    } catch(QueueException e){
+                        System.out.println("error dequeueing job \n " + e.getMessage());
+                    }
+                    break;
+                case 3:
+                    //Peek at the job at front of the queue
+                    try {
+                        printQueue.peek();
+                    } catch(QueueException e){
+                        System.out.println("error peeking job " + e.getMessage());
+                    }
+                    break;
+                case 4:
+                    //empty the queue
+                    try {
+                        printQueue.peek();
+                    } catch(QueueException e) {
+                        System.out.println("error peeking job " + e.getMessage());
+                    }
+                    break;
+                case 5:
+                    //display all the jobs
+                    System.out.println("placeholder print option");
+                    break;
+                case 6:
+                    //quit the program
+                    System.out.println("Goodbye! Your Queue is lost.");
+                    System.exit(0);
             }
 
         } while (choice != 6);
