@@ -16,7 +16,6 @@ public class JukeBox2 {
         List<SongV2> songList = MockSongs.getSongStringsV2();
         System.out.println("Song List: " + songList);
 
-        Collections.sort(songList);
         System.out.println("Song List: " + songList);
     }
 
