@@ -17,7 +17,7 @@ public class TestPrintQueue {
         System.out.println("6. Quit the program.");
 
         //menu validation
-        if (!sc.hasNextInt()){
+        while (!sc.hasNextInt()){
             System.out.println("Please enter a valid choice.");
             sc.next();
         }

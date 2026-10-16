@@ -74,7 +74,12 @@ public class QueueArrayBased implements QueueInterface {
 
     System.out.print("Front -> ");
     for ( int i = 0; i < count; ++i) {
-      System.out.print(items[i] + ", ");
+      int index = (front + i) % (MAX_QUEUE);
+      System.out.print(items[index]);
+      //comma seperation only between elements
+      if (i < count - 1) {
+        System.out.print(", ");
+      }
     }
     System.out.print("<- Back");
     System.out.println();

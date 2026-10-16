@@ -7,7 +7,7 @@ public class PrintJob {
 
     @Override
     public String toString() {
-        return doc_name + ",";
+        return doc_name;
     }
 
     public int getId() {
