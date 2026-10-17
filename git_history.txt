@@ -1,3 +1,118 @@
+commit 34393d023a8e0315bf84dcb66ed958163c9b83b3
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Fri Oct 16 03:50:44 2026 +0100
+
+    display circular queue
+
+commit 1dfd1ca043ab1e2fc1b93d1767df309028d605e4
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Tue Oct 13 17:08:03 2026 +0100
+
+    display queue method
+
+commit c2b7bcce305b61c16de46f11ee2208d7598cc176
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Tue Oct 13 16:44:46 2026 +0100
+
+    menu implementation finished
+
+commit 9bc1a8984d6e0bf863ff9e7e635a7a92ec216df5
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Tue Oct 13 16:38:37 2026 +0100
+
+    menu enqueue
+
+commit 51791e8781a5ad1371a573fe863ddedc245a48af
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Tue Oct 13 16:25:47 2026 +0100
+
+    printjob menu and user input for main menu
+
+commit f651371b8187888abc94977e873d3208b49ca868
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Mon Oct 12 23:08:41 2026 +0100
+
+    Generic methods and classes
+
+commit fc33815233b19b9185058fe98292ca43116e6f1f
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Fri Oct 9 16:46:02 2026 +0100
+
+    3i: Stack menu items complete with error handling and bracket checking added to balanced method
+
+commit 9a121072138e7080e35e5d116fe858358a7a6f56
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Fri Oct 9 15:53:33 2026 +0100
+
+    3h: Stack menu 5 item complete
+
+commit 21ecb4ead6a0d6fb0431f1bf699ff350ae19f35f
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Fri Oct 9 15:37:09 2026 +0100
+
+    OO Design sample testing
+
+commit 5982da913f6bd134bdf3f1e3a19ca857feb56884
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Tue Oct 6 13:00:06 2026 +0100
+
+    3g: Stack 4 menu item complete
+
+commit 08b73380360028bd53fc0b092382e306fa4173ad
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Tue Oct 6 12:54:16 2026 +0100
+
+    3f: Stack Menu 1-3 implemented
+
+commit dd10c130513caa5076fd8ba541fa968766e230d8
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Tue Oct 6 12:35:33 2026 +0100
+
+    3e: Stack menu option 1
+
+commit 41f8740c5bffe4c9855ca2f84fea43d70c4ada5b
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Tue Oct 6 12:04:18 2026 +0100
+
+    3d:  balancedString main method untested
+
+commit b9d4bcd93e95899eac7b5a6c3af1adfad465c7be
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Tue Oct 6 11:38:41 2026 +0100
+
+    3c: Stack Interface method added and displayStack StackRefBased
+
+commit b83e92cf5343d21b071c2470fd47a9dcce89a757
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Tue Oct 6 11:17:21 2026 +0100
+
+    3b: Stack files imported
+
+commit 2f3c39fad7951e882d94b41365a17fd58df6e7e3
+Merge: 2a01bae 40fc363
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Mon Oct 5 17:41:03 2026 +0100
+
+    3a: Stack package setup, needs class implementation
+
+commit 2a01baeaa31ae1b7a48622ef0b3c77416d9f1cdf
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Mon Oct 5 17:36:51 2026 +0100
+
+    3: Lab3 Stack Lab Setup
+
+commit 40fc3638741dab5d9491c3dad24fa55d49935bb0
+Author: Gary <b00156485@mytudublin.ie>
+Date:   Mon Oct 5 17:35:42 2026 +0100
+
+    3: Lab3 Stack setup
+
+commit 3c33a61d5fa267603e2c9bda6e607d63491e8601
+Author: Gary Linux <b00156485@mytudublin.ie>
+Date:   Thu Oct 1 16:51:04 2026 +0100
+
+    git commits added
+
 commit 7291b2e4ba46502ac4314214e0faf92d79133dd4
 Author: Gary Linux <b00156485@mytudublin.ie>
 Date:   Thu Oct 1 16:46:55 2026 +0100
