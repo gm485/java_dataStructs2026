@@ -59,17 +59,36 @@ public class ReinforcementMain {
 //        average = (float) sum / userInputArr.length;
 //        System.out.println("average is " + average);
         //R 1.6
-        int numberForCalculation = 5;
-        System.out.println("number equal 5" + calcSquareNumbers(numberForCalculation));
-        //r 1.7
-        String vowelString = "aeikkk";
-        System.out.println("3 vowels in string" + countCharString(vowelString));
-        //r 1.8
-        String stringToScan = "HelloWorld123!@";
-        int[] results = countCharString(stringToScan);
-        System.out.println(stringToScan + "contains vowels:" + results[0] + "\ncontains numbers: " + results[1]
-        + "\n contains special Chars: " + results[2]
-        + "\n contains constonants: " + results[3]);
+//        int numberForCalculation = 5;
+//        System.out.println("number equal 5" + calcSquareNumbers(numberForCalculation));
+//        //r 1.7
+//        String vowelString = "aeikkk";
+//        System.out.println("3 vowels in string" + countCharString(vowelString));
+//        //r 1.8
+//        String stringToScan = "HelloWorld123!@";
+//        int[] results = countCharString(stringToScan);
+//        System.out.println(stringToScan + "contains vowels:" + results[0] + "\ncontains numbers: " + results[1]
+//        + "\n contains special Chars: " + results[2]
+//        + "\n contains constonants: " + results[3]);
+
+       // //r 1.8
+       // String stringtoChange = "Hello, Gary, How are you";
+       // StringBuilder sb = new StringBuilder(stringtoChange);
+       // //loop over sb
+       // for (int i = 0; i < stringtoChange.length(); i++) {
+       //     if (sb.charAt(i) == ','){
+       //         sb.setCharAt(i, ' ');
+       //     }
+       // }
+       // System.out.println(sb + " after change no , should exist");
+
+        //r1.9
+        Flower flower = new Flower("dandellion", 5, 2);
+        System.out.printf("flower object"+ flower + "\n name: " + flower.name
+        + "\n number of petals: " + flower.numOfPetals
+        + "\n price: " + flower.price);
+
+
     }
 
     //write a method isMultiple that takes two long values, n and m,
