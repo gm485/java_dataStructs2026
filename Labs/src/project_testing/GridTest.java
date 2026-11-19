@@ -1,8 +1,8 @@
 package project_testing;
 
 public class GridTest {
-    static void main() {
-        Grid grid = new Grid();
+    public static void main(String[] args) {
+        Grid grid = new Grid(10, 10);
 
         System.out.println("--Maze grid test:");
 
@@ -26,5 +26,14 @@ public class GridTest {
         for (Cell n : cornerNeighbours) {
             System.out.println("-> Found unvisited neighbour at:" + n.row + ", " + n.col);
         }
+
+        //testing of random neighbour test
+        Cell randomCell = grid.getCell(5,3);
+        Cell[] randomNeighbourTest = grid.getUnvisitedNeighbors(randomCell);
+        Cell chosen = grid.removeWalls(randomCell, randomNeighbourTest);
+        System.out.println("chosen neighbour" + chosen);
+        //return neighbours of the chosen cell
+
+
     }
 }
