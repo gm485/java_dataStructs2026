@@ -86,5 +86,7 @@ public class Grid {
         }
         return unvisitedNeighours;
     }
+    public void removeWalls(Cell curr, Cell chosenCell) {
 
+    }
 }
