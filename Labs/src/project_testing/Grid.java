@@ -80,11 +80,37 @@ public class Grid {
         int index = 0;
         for (Cell neighbour : potentialNeighbours) {
             if (neighbour != null && !neighbour.visited){
-                unvisitedNeighours[index] = cell;
+                unvisitedNeighours[index] = neighbour;
                 index++;
             }
         }
         return unvisitedNeighours;
+    }
+
+    public void removeWalls(Cell curr, Cell neighbour) {
+        int rowDiff = curr.row - neighbour.row;
+        int colDiff = curr.col - neighbour.col;
+
+        //check north
+        if (rowDiff == -1 && colDiff == -1) {
+            curr.top = false;
+            neighbour.bottom = false;
+        }
+        //south
+        else if (rowDiff == 1 && colDiff == 0) {
+            curr.bottom = false;
+            neighbour.top = false;
+        }
+        //West
+        else if (rowDiff == 0 && colDiff == -1) {
+            curr.left = false;
+            neighbour.right = false;
+        }
+        //East
+        else if (rowDiff == 0 && colDiff == 1){
+            curr.right = false;
+            neighbour.left = false;
+        }
     }
 
 }
