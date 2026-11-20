@@ -1,17 +1,12 @@
 package project_testing;
 import lab3.StackInterface;
 import lab3.StackReferenceBased;
-import java.util.Random;
-public class Grid implements Graph{
+
+public class Grid {
 
     Cell [][] grid;
     int rows;
     int cols;
-    int nodeCount;
-    //cell neighbours
-    Cell[] neighbours;
-    Random rand = new Random();
-    //random index
 
     public Grid() {
         //default constructor
@@ -41,11 +36,6 @@ public class Grid implements Graph{
 
     }
 
-    public void init(int n) {
-
-    }
-    public int nodeCount(){return this.nodeCount;}
-
     public int getRows() {
         return this.grid.length;
     }
@@ -62,7 +52,6 @@ public class Grid implements Graph{
         return null;
     }
 
-
     public Cell[] getUnvisitedNeighbors(Cell cell){
         int r = cell.row;
         int c = cell.col;
@@ -74,7 +63,7 @@ public class Grid implements Graph{
                 getCell(r, c + 1),//right
         };
 
-        //count visited of neighbours
+        //count visited
         int count = 0;
         for (Cell neighbour : potentialNeighbours) {
             if (neighbour != null && !neighbour.visited){
@@ -97,27 +86,5 @@ public class Grid implements Graph{
         }
         return unvisitedNeighours;
     }
-    //inputs
-    public void generateMaze() {
-        //generate rules
-        //steps in generating path for the graph
-        //visited array, track each neighbour of the current cell
-        //stack to place first node and then
-        //choose a neighbour and travel to the node
-        //rules upon visit
-        //1. mark node as visited
-        //2. place upon the stack
-        //3. get neighbours of the node
-    }
-    public void removeWalls(Cell curr, Cell chosen) {
-        //rules for removing of walls
-        //compare walls on curr and neighbour
-        //wall removal of both cell curr and chosen
 
-        //North remove
-        //South remove
-        //West remove
-        //East remove
-
-    }
 }

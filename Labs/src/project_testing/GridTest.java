@@ -30,8 +30,6 @@ public class GridTest {
         //testing of random neighbour test
         Cell randomCell = grid.getCell(5,3);
         Cell[] randomNeighbourTest = grid.getUnvisitedNeighbors(randomCell);
-        Cell chosen = grid.removeWalls(randomCell, randomNeighbourTest);
-        System.out.println("chosen neighbour" + chosen);
         //return neighbours of the chosen cell
 
 
