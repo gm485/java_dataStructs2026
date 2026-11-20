@@ -52,6 +52,20 @@ public class Grid {
         return null;
     }
 
+    //dfs maze generation
+    public void generateDFSMaze() {
+        StackInterface stack = new StackReferenceBased();
+        Cell start = getCell(0, 0);
+        //special case, null pointer on insertion of matrix
+        if ( start == null) {
+            return;
+        }
+        //visit node and push to stack
+        start.visited = true;
+        stack.push(start);
+        //look for neighbour
+    }
+
     public Cell[] getUnvisitedNeighbors(Cell cell){
         int r = cell.row;
         int c = cell.col;
