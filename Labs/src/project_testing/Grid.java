@@ -2,6 +2,8 @@ package project_testing;
 import lab3.StackInterface;
 import lab3.StackReferenceBased;
 
+import java.util.Random;
+
 public class Grid {
 
     Cell [][] grid;
@@ -14,6 +16,7 @@ public class Grid {
         this.cols = 10;
         this.grid = new Cell[rows][cols];
         generateGrid();
+        generateDFSMaze();
     }
 
     //custom constructor
@@ -22,11 +25,10 @@ public class Grid {
         this.cols = cols;
         this.grid = new Cell[rows][cols];
         generateGrid();
+        generateDFSMaze();
     }
 
     public void generateGrid() {
-        //stack for dfs maze generation
-        StackInterface stack = new StackReferenceBased();
 
         for (int i = 0; i < this.grid.length; i++) {
             for ( int j = 0; j < this.grid[i].length; j++) {
@@ -64,6 +66,21 @@ public class Grid {
         start.visited = true;
         stack.push(start);
         //look for neighbour
+        Random random = new Random();
+        while (!stack.isEmpty()) {
+            Cell curr = (Cell) stack.peek();
+            Cell[] unvisited = getUnvisitedNeighbors(curr);
+
+            if (unvisited.length > 0) {
+                Cell next = unvisited[random.nextInt(unvisited.length)];
+                removeWalls(curr, next);
+                next.visited = true;
+                stack.push(next);
+            } else {
+                stack.pop();//nothing to visit backtrack and look for neighbours
+            }
+
+        }
     }
 
     public Cell[] getUnvisitedNeighbors(Cell cell){
@@ -106,22 +123,22 @@ public class Grid {
         int colDiff = curr.col - neighbour.col;
 
         //check north
-        if (rowDiff == -1 && colDiff == -1) {
+        if (rowDiff == 1 && colDiff == 0) {
             curr.top = false;
             neighbour.bottom = false;
         }
         //south
-        else if (rowDiff == 1 && colDiff == 0) {
+        else if (rowDiff == -1 && colDiff == 0) {
             curr.bottom = false;
             neighbour.top = false;
         }
         //West
-        else if (rowDiff == 0 && colDiff == -1) {
+        else if (rowDiff == 0 && colDiff == 1) {
             curr.left = false;
             neighbour.right = false;
         }
         //East
-        else if (rowDiff == 0 && colDiff == 1){
+        else if (rowDiff == 0 && colDiff == -1){
             curr.right = false;
             neighbour.left = false;
         }
