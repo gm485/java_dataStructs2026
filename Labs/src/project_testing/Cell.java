@@ -5,6 +5,7 @@ public class Cell {
 
     public char element;
     public boolean visited;
+    public Cell parent;
     //coordinate in the actual grid
     int row;
     int col;

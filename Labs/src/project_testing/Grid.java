@@ -26,6 +26,7 @@ public class Grid {
         this.grid = new Cell[rows][cols];
         generateGrid();
         generateDFSMaze();
+        isAllVisited();
     }
 
     public void generateGrid() {
@@ -52,6 +53,33 @@ public class Grid {
             return grid[r][c];
         }
         return null;
+    }
+
+    public boolean isAllVisited() {
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                Cell cell = getCell(r, c);
+                if (cell == null || !cell.visited) {
+                    System.out.println("Unvisited cell at (" + r + ", " + c + ")");
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    //reset each visited cell node
+    private void resetForBFS() {
+        for(int i = 0; i < rows; i++){
+            for( int j = 0; j < cols; j++) {
+                Cell cell = getCell(i, j);
+                if ( cell != null ) {
+                    //mark each item visited and remove parent
+                    cell.visited = false;
+                    cell.parent = null;
+                }
+            }
+        }
     }
 
     //dfs maze generation
@@ -82,7 +110,7 @@ public class Grid {
 
         }
     }
-
+    //dfs maze generation, neighbour checking
     public Cell[] getUnvisitedNeighbors(Cell cell){
         int r = cell.row;
         int c = cell.col;
@@ -116,6 +144,27 @@ public class Grid {
             }
         }
         return unvisitedNeighours;
+    }
+
+
+    //neighbour checking for bfs walls
+    public Cell[] getOpenUnvisitedNeighbors(Cell cell) {
+        int r = cell.row;
+        int col = cell.col;
+        Cell[] potentialNeighbours = new Cell[4];
+        int count = 0;
+
+        //North
+        if (!cell.top) {
+            Cell north = getCell(r - 1, col);
+            if (north != null && !north.bottom && !north.visited) {
+                potentialNeighbours[count++] = north;
+            }
+        }
+        //South
+        //West
+        //East
+        return  potentialNeighbours;
     }
 
     public void removeWalls(Cell curr, Cell neighbour) {
