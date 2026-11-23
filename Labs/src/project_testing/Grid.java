@@ -1,7 +1,7 @@
 package project_testing;
 import lab3.StackInterface;
 import lab3.StackReferenceBased;
-
+import lab4.QueueArrayBased;
 import java.util.Random;
 
 public class Grid {
@@ -162,9 +162,32 @@ public class Grid {
             }
         }
         //South
+        if (!cell.bottom) {
+            Cell south = getCell(r, col + 1);
+            if (south != null && !south.bottom && !south.visited) {
+                potentialNeighbours[count++] = south;
+            }
+        }
         //West
+        if (!cell.left) {
+            Cell west = getCell(r, col - 1);
+            if (west != null && !west.bottom && !west.visited) {
+                potentialNeighbours[count++] = west;
+            }
+        }
         //East
-        return  potentialNeighbours;
+        if (!cell.right) {
+            Cell east = getCell(r, col + 1);
+            if (east != null && !east.bottom && !east.visited) {
+                potentialNeighbours[count++] = east;
+            }
+        }
+
+        Cell[] openUnvisitedNeighbours = new Cell[count];
+        for (int i = 0; i < count; i++) {
+            openUnvisitedNeighbours[i] = potentialNeighbours[i];
+        }
+        return openUnvisitedNeighbours;
     }
 
     public void removeWalls(Cell curr, Cell neighbour) {
