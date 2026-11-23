@@ -7,6 +7,7 @@ public class MazePanel extends JPanel {
 
     private final Grid grid;
     private final int cellSize;
+    private Cell[] path = new Cell[0];
 
     public MazePanel(Grid grid, int cellSize) {
         this. grid = grid;
@@ -15,6 +16,11 @@ public class MazePanel extends JPanel {
         int height = grid.getRows() * cellSize + 2;
         setPreferredSize(new Dimension(width, height));
         setBackground(Color.WHITE);
+    }
+
+    public void setPath(Cell[] path) {
+        this.path = (path != null) ? path : new Cell[0];
+        repaint();
     }
 
     @Override
@@ -45,6 +51,24 @@ public class MazePanel extends JPanel {
                 }
                 if (cell.right) {
                     g2.drawLine(x + cellSize, y, x + cellSize, y + cellSize);
+                }
+            }
+        }
+
+        if ( path != null && path.length > 1){
+            g2.setColor(Color.RED);
+            g2.setStroke(new BasicStroke(Math.max(2f, cellSize / 6f)));
+
+            for (int i = 0; i < path.length - 1; i++) {
+                Cell a = path[i];
+                Cell b = path[i + 1];
+
+                if (a != null && b != null) {
+                    int x1 = a.col * cellSize + cellSize / 2;
+                    int y1 = a.row * cellSize + cellSize / 2;
+                    int x2 = b.col * cellSize + cellSize / 2;
+                    int y2 = b.row * cellSize + cellSize / 2;
+                    g2.drawLine(x1, y1, x2, y2);
                 }
             }
         }

@@ -110,7 +110,72 @@ public class Grid {
 
         }
     }
+
+    //solve breath first search
+    public Cell[] solveBFS(Cell start, Cell end) {
+        //error checking for input of method
+        if (start == null || end == null) {
+            return new Cell[0];
+        }
+
+        //reset the grid visited neighbour rules
+        resetForBFS();
+
+        QueueArrayBased queue = new QueueArrayBased();
+        start.visited = true;
+        start.parent = null;
+        queue.enqueue(start);
+
+        boolean found = false;
+
+        while (!queue.isEmpty()) {
+            Cell curr = (Cell) queue.dequeue();
+            //check if end point was found
+            if (curr == end) {
+                found = true;
+                break;
+            }
+            //if not scan open neighbours and traverse
+            Cell[] neighbours = getOpenUnvisitedNeighbors(curr);
+            for (int i = 0; i < neighbours.length; i++) {
+                //travel each neighbour and mark visited
+                Cell next = neighbours[i];
+                next.visited = true;
+                //parent to be updateed before placed in the queue
+                next.parent = curr;
+                queue.enqueue(next);
+            }
+            //error handling if no end point found
+        }
+        if (!found) {
+            return new Cell[0];
+        }
+        //see helper function for reversal to recreate path
+        return reconstructBFS(start, end);
+    }
+
+    //helper function to reverse traversal of the maze
+    public Cell[] reconstructBFS(Cell start, Cell end) {
+        Cell[] reversed = new Cell[rows * cols];
+        int count = 0;
+        //each iteration we move to the parent of the graph
+        //looping to create a reverse of the vertex traversal
+        for (Cell i = end; i != null; i = i.parent) {
+            reversed[count++] = i;
+            //we found the start of the array
+            if (i == start) {
+                break;
+            }
+        }
+            Cell[] path = new Cell[count];
+            for (int j = 0; j < count; j++ ) {
+                path[j] = reversed[count - 1 - j];
+            }
+            return path;
+        }
+
     //dfs maze generation, neighbour checking
+
     public Cell[] getUnvisitedNeighbors(Cell cell){
         int r = cell.row;
         int c = cell.col;
@@ -149,6 +214,9 @@ public class Grid {
 
     //neighbour checking for bfs walls
     public Cell[] getOpenUnvisitedNeighbors(Cell cell) {
+        if (cell == null) {
+            return new Cell[0];
+        }
         int r = cell.row;
         int col = cell.col;
         Cell[] potentialNeighbours = new Cell[4];
@@ -163,22 +231,22 @@ public class Grid {
         }
         //South
         if (!cell.bottom) {
-            Cell south = getCell(r, col + 1);
-            if (south != null && !south.bottom && !south.visited) {
+            Cell south = getCell(r + 1, col);
+            if (south != null && !south.top && !south.visited) {
                 potentialNeighbours[count++] = south;
             }
         }
         //West
         if (!cell.left) {
             Cell west = getCell(r, col - 1);
-            if (west != null && !west.bottom && !west.visited) {
+            if (west != null && !west.right && !west.visited) {
                 potentialNeighbours[count++] = west;
             }
         }
         //East
         if (!cell.right) {
             Cell east = getCell(r, col + 1);
-            if (east != null && !east.bottom && !east.visited) {
+            if (east != null && !east.left && !east.visited) {
                 potentialNeighbours[count++] = east;
             }
         }
